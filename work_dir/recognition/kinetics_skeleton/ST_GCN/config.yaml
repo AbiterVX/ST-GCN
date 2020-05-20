@@ -1,0 +1,53 @@
+# command line: main.py recognition -c config/st_gcn/kinetics-skeleton/train.yaml --device 0 --num_worker 0 --save_interval 1
+
+base_lr: 0.1
+batch_size: 16
+config: config/st_gcn/kinetics-skeleton/train.yaml
+debug: false
+device:
+- 0
+eval_interval: 5
+feeder: feeder.feeder.Feeder
+ignore_weights: []
+log_interval: 100
+model: net.st_gcn.Model
+model_args:
+    edge_importance_weighting: true
+    graph_args:
+        layout: openpose
+        strategy: True
+    in_channels: 3
+    num_class: 400
+nesterov: true
+num_epoch: 50
+num_worker: 0
+optimizer: SGD
+pavi_log: false
+phase: train
+print_log: true
+save_interval: 1
+save_log: true
+save_result: false
+show_topk:
+- 1
+- 5
+start_epoch: 0
+step:
+- 20
+- 30
+- 40
+- 50
+test_batch_size: 16
+test_feeder_args:
+    data_path: ./data/Kinetics/kinetics-skeleton/val_data.npy
+    label_path: ./data/Kinetics/kinetics-skeleton/val_label.pkl
+train_feeder_args:
+    data_path: ./data/Kinetics/kinetics-skeleton/train_data.npy
+    label_path: ./data/Kinetics/kinetics-skeleton/train_label.pkl
+    random_choose: true
+    random_move: true
+    window_size: 150
+use_gpu: true
+weight_decay: 0.0001
+weights: null
+work_dir: ./work_dir/recognition/kinetics_skeleton/ST_GCN
