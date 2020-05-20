@@ -11,4 +11,9 @@ This code base will soon be not maintained and exists as a historical artifact t
 > **Spatial Temporal Graph Convolutional Networks for Skeleton-Based Action Recognition**, Sijie Yan, Yuanjun Xiong and Dahua Lin, AAAI 2018. [[Arxiv Preprint]](https://arxiv.org/abs/1801.07455)
 
 For more recent works please checkout MMSkeleton.
+
+
+---------------------------
+2020 毕业设计使用
+改了一些代码，主要是修改图结构添加了一些策略。
   
